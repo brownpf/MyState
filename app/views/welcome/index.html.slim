@@ -84,14 +84,17 @@
               .large-2.columns
                 label.inline Your Phone Number
               .large-10.columns
-                input#yourName placeholder="+44 7xxx xxx xxx" type="text"
+                input#yourPhone placeholder="+44 7xxx xxx xxx" type="text"
             .row.collapse
               .large-2.columns
                 label.inline Your Postcode
               .large-10.columns
-                input#yourEmail placeholder="FL0 0DD" type="text"
-            button.get-location
-              | LOLCATION
+                input#yourPostcode placeholder="FL0 0DD" type="text"
+            .row.collapse
+              .large-2.columns
+                label.inline Your Status
+              .large-10.columns
+                = select(:email, :status, options_for_select([["OH MY GOD GET ME OUT OF HERE!", "1"], ["Worried", "2"], ["Ok", "3"]]))
             p hi
             button.radius.button type="submit" name="hi"
               | Submit
@@ -137,7 +140,7 @@
     /! Clicking this placeholder fires the mapModal Reveal modal
     p
       a data-reveal-id="mapModal" href=""
-        img src="http://placehold.it/400x280"
+        / img src="http://placehold.it/400x280"
       br/
       a data-reveal-id="mapModal" href=""
     p
@@ -170,6 +173,6 @@ footer.row
 #mapModal.reveal-modal
   h4 Where We Are
   p
-    img src="http://placehold.it/800x600"
+    / img src="http://placehold.it/800x600"
   /! Any anchor with this class will close the modal. This also inherits certain styles, which can be overriden.
   a.close-reveal-modal href="#"
