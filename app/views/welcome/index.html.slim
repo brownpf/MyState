@@ -24,10 +24,9 @@
               .large-2.columns
                 label.inline.form-label Your Phone Number
               .large-10.columns
-                input#yourPhone placeholder="+44 7xxx xxx xxx" type="text"
-                = text_field_tag :telephone, id: "yourPhone", placeholder: "+44 7xxx xxx xxx"
-                = hidden_field_tag :latitude, class: "latitude"
-                = hidden_field_tag :longitude, class: "longitude"
+                = text_field_tag :telephone, nil, id: "yourPhone", placeholder: "+44 7xxx xxx xxx"
+                = hidden_field_tag :latitude, nil, class: "latitude"
+                = hidden_field_tag :longitude, nil, class: "longitude"
 
             .row.collapse#postcode-row
               .large-2.columns
