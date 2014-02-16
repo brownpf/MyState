@@ -1,0 +1,175 @@
+/ nav.top-bar data-topbar=""
+/   ul.title-area
+/     /! Title Area
+/     li.name
+/       h1
+/         a href="#"
+/           = Rails.configuration.site_name
+/     li.toggle-topbar.menu-icon
+/       a href="#"
+/         span menu
+/   section.top-bar-section
+/     /! Right Nav Section
+/     ul.right
+/       li.divider
+/       li.has-dropdown
+/         a href="#"
+/         ul.dropdown
+/           li
+/             label Section Name
+/           li.has-dropdown
+/             a href="#"
+/             ul.dropdown
+/               li
+/                 a href="#"
+/               li
+/                 a href="#"
+/               li
+/                 a href="#"
+/               li
+/                 a href="#"
+/               li
+/                 a href="#"
+/               li
+/                 a href="#"
+/           li
+/             a href="#"
+/           li
+/             a href="#"
+/           li.divider
+/           li
+/             label Section Name
+/           li
+/             a href="#"
+/           li
+/             a href="#"
+/           li
+/             a href="#"
+/           li.divider
+/           li
+/             a href="#"
+/       li.divider
+/       li
+/         a href="#"
+/       li.divider
+/       li.has-dropdown
+/         a href="#"
+/         ul.dropdown
+/           li
+/             a href="#"
+/           li
+/             a href="#"
+/           li
+/             a href="#"
+/           li.divider
+/           li
+/             a href="#"
+/ /! End Top Bar
+/! Main Page Content and Sidebar
+.row
+  /! Contact Details
+  .large-9.columns
+    h3=Rails.configuration.site_name
+    p
+      | Enter your details below to update your status.
+      = succeed "." do
+        em all day
+    .section-container.tabs data-section=""
+      section.section
+        h5.title
+          a href="#panel1"
+        .content data-slug="panel1"
+          form
+            .row.collapse
+              .large-2.columns
+                label.inline Your Phone Number
+              .large-10.columns
+                input#yourName placeholder="+44 7xxx xxx xxx" type="text"
+            .row.collapse
+              .large-2.columns
+                label.inline Your Postcode
+              .large-10.columns
+                input#yourEmail placeholder="FL0 0DD" type="text"
+            button.get-location
+              | LOLCATION
+            p hi
+            button.radius.button type="submit" name="hi"
+              | Submit
+
+            input.latitude type='text' placeholder="lol"
+            input.longitude type='text' placeholder="lol 2"
+      section.section
+        / h5.title
+        /   a href="#panel2"
+        / .content data-slug="panel2"
+        /   ul.large-block-grid-5
+        /     li
+        /       a href="mailto:mal@serenity.bc.reb"
+        /         img src="http://placehold.it/200x200&text=[person]"
+        /     li
+        /       a href="mailto:zoe@serenity.bc.reb"
+        /         img src="http://placehold.it/200x200&text=[person]"
+        /     li
+        /       a href="mailto:jayne@serenity.bc.reb"
+        /         img src="http://placehold.it/200x200&text=[person]"
+        /     li
+        /       a href="mailto:doc@serenity.bc.reb"
+        /         img src="http://placehold.it/200x200&text=[person]"
+        /     li
+        /       a href="mailto:killyouwithmymind@serenity.bc.reb"
+        /         img src="http://placehold.it/200x200&text=[person]"
+        /     li
+        /       a href="mailto:leafonthewind@serenity.bc.reb"
+        /         img src="http://placehold.it/200x200&text=[person]"
+        /     li
+        /       a href="mailto:book@serenity.bc.reb"
+        /         img src="http://placehold.it/200x200&text=[person]"
+        /     li
+        /       a href="mailto:klee@serenity.bc.reb"
+        /         img src="http://placehold.it/200x200&text=[person]"
+        /     li
+        /       a href="mailto:inara@guild.comp.all"
+        /         img src="http://placehold.it/200x200&text=[person]"
+  /! End Contact Details
+  /! Sidebar
+  .large-3.columns
+    h5 Map
+    /! Clicking this placeholder fires the mapModal Reveal modal
+    p
+      a data-reveal-id="mapModal" href=""
+        img src="http://placehold.it/400x280"
+      br/
+      a data-reveal-id="mapModal" href=""
+    p
+      | a
+      br/
+      | b
+  /! End Sidebar
+/! End Main Content and Sidebar
+/! Footer
+footer.row
+  .large-12.columns
+    hr/
+    .row
+      .large-6.columns
+        | Created at
+        a href="https://twitter.com/search?q=%23floodhack" #FloodHack
+        |, Google Campus 2014
+      .large-6.columns
+        ul.inline-list.right
+          li
+            a href="#"
+          li
+            a href="#"
+          li
+            a href="#"
+          li
+            a href="#"
+/! End Footer
+/! Map Modal
+#mapModal.reveal-modal
+  h4 Where We Are
+  p
+    img src="http://placehold.it/800x600"
+  /! Any anchor with this class will close the modal. This also inherits certain styles, which can be overriden.
+  a.close-reveal-modal href="#"

@@ -16,6 +16,8 @@ gem "slim-rails"
 
 gem 'twilio-ruby'
 
+gem 'foundation-rails'
+
 #image manipulation
 #gem "mini_magick"
 #gem 'carrierwave'
@@ -61,6 +63,12 @@ gem "active_model_serializers"
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
+end
+
+group :development do
+  # Better error page in Rails in case of exceptions
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 gem 'twilio-ruby'
