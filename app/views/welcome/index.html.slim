@@ -16,17 +16,22 @@
         h5.title
           a href="#panel1"
         .content data-slug="panel1"
-          = form_tag('create_request')
+          = form_tag create_request_url do
             .row.collapse#phone-row
               .large-2.columns
                 label.inline.form-label Your Phone Number
               .large-10.columns
                 input#yourPhone placeholder="+44 7xxx xxx xxx" type="text"
+                = text_field_tag :telephone, id: "yourPhone", placeholder: "+44 7xxx xxx xxx"
+                = hidden_field_tag :latitude, class: "latitude"
+                = hidden_field_tag :longitude, class: "longitude"
+
             .row.collapse#postcode-row
               .large-2.columns
                 label.inline.form-label Your Postcode
               .large-10.columns
-                input#yourPostcode placeholder="FL0 0DD" type="text"
+                = text_field_tag :post_code, id: "yourPostcode", placeholder: "FL0 0DD"
+
             .row.collapse
               .large-2.columns
                 label.inline.form-label Your Status
@@ -37,8 +42,8 @@
                 button.radius.button type="submit"
                   | Update my status
 
-            input.latitude type='hidden'
-            input.longitude type='hidden'
+            //input.latitude type='hidden'
+            //input.longitude type='hidden'
   /! End Contact Details
   /! Sidebar
   / .large-3.columns
