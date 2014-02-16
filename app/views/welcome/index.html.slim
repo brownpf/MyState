@@ -85,7 +85,7 @@
                 label.inline Your Phone Number
               .large-10.columns
                 input#yourPhone placeholder="+44 7xxx xxx xxx" type="text"
-            .row.collapse
+            .row.collapse#postcode-row
               .large-2.columns
                 label.inline Your Postcode
               .large-10.columns
@@ -95,44 +95,11 @@
                 label.inline Your Status
               .large-10.columns
                 = select(:email, :status, options_for_select([["OH MY GOD GET ME OUT OF HERE!", "1"], ["Worried", "2"], ["Ok", "3"]]))
-            p hi
             button.radius.button type="submit" name="hi"
               | Submit
 
-            input.latitude type='text' placeholder="lol"
-            input.longitude type='text' placeholder="lol 2"
-      section.section
-        / h5.title
-        /   a href="#panel2"
-        / .content data-slug="panel2"
-        /   ul.large-block-grid-5
-        /     li
-        /       a href="mailto:mal@serenity.bc.reb"
-        /         img src="http://placehold.it/200x200&text=[person]"
-        /     li
-        /       a href="mailto:zoe@serenity.bc.reb"
-        /         img src="http://placehold.it/200x200&text=[person]"
-        /     li
-        /       a href="mailto:jayne@serenity.bc.reb"
-        /         img src="http://placehold.it/200x200&text=[person]"
-        /     li
-        /       a href="mailto:doc@serenity.bc.reb"
-        /         img src="http://placehold.it/200x200&text=[person]"
-        /     li
-        /       a href="mailto:killyouwithmymind@serenity.bc.reb"
-        /         img src="http://placehold.it/200x200&text=[person]"
-        /     li
-        /       a href="mailto:leafonthewind@serenity.bc.reb"
-        /         img src="http://placehold.it/200x200&text=[person]"
-        /     li
-        /       a href="mailto:book@serenity.bc.reb"
-        /         img src="http://placehold.it/200x200&text=[person]"
-        /     li
-        /       a href="mailto:klee@serenity.bc.reb"
-        /         img src="http://placehold.it/200x200&text=[person]"
-        /     li
-        /       a href="mailto:inara@guild.comp.all"
-        /         img src="http://placehold.it/200x200&text=[person]"
+            input.latitude type='hidden'
+            input.longitude type='hidden'
   /! End Contact Details
   /! Sidebar
   .large-3.columns
@@ -156,8 +123,10 @@ footer.row
     .row
       .large-6.columns
         | Created at
-        a href="https://twitter.com/search?q=%23floodhack" #FloodHack
-        |, Google Campus 2014
+        a target="_blank" href="https://twitter.com/search?q=%23floodhack"  #FloodHack
+        |, in
+        a target="_blank" href="http://www.campuslondon.com/‎"  Google Campus
+        |  2014
       .large-6.columns
         ul.inline-list.right
           li

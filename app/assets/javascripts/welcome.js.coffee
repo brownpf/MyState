@@ -4,11 +4,12 @@
 
 jQuery ($) ->
   $(document).ready ->
+    $("#postcode-row").hide()
     getLocation = ->
       if navigator.geolocation
         navigator.geolocation.getCurrentPosition showPosition
       else
-        x.innerHTML = "Geolocation is not supported by this browser."
+        $("#postcode-row").show()
 
     showPosition = (position) ->
       $(".latitude").val(position.coords.latitude)
