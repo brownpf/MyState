@@ -2,7 +2,8 @@ StausMe::Application.routes.draw do
   get "requests/get_requests"
 
   #Twilio AUTH
-  post '/sms' => "users#validating_sms", as: "validating_sms"
+  post '/sms', to: 'request#request_incoming', as: :request_incoming
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -10,8 +10,10 @@ require 'twilio-ruby'
   # This method captures the incoming sms message
   def request_incoming
     # And the message text
-    text = Request.store_sms(params[:Body])
+    from = params[:From]
+    text = Request.store_sms(params[:Body], from)
 
+    # Return the message back out
     render xml: text
   end
 
