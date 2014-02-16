@@ -24,7 +24,7 @@ gem "slim-rails"
 gem 'sqlite3'
 
 #Database Postgres
-gem "pg"
+#gem "pg", group: :production
 
 #Pagination
 gem 'will_paginate', '~> 3.0.0'
@@ -61,6 +61,7 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-
+gem 'twilio-ruby'
 gem 'rails_12factor', group: :production
+
 
