@@ -11,16 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140216134805) do
+ActiveRecord::Schema.define(version: 20140216171509) do
 
   create_table "requests", force: true do |t|
     t.string   "telephone"
-    t.float    "y_coords"
-    t.float    "x_coords"
     t.string   "postcode"
     t.string   "status"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
 end

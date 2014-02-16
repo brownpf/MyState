@@ -14,4 +14,18 @@ require 'twilio-ruby'
 
     render xml: text
   end
+
+
+  def create_request
+    request = Request.create
+    if params[:post_code]
+      coords = request.reverse_geolocation(postcode)
+    else
+      coords = [params[:latitude], params[:longitude]]
+    end
+
+    request.store_location(coords[0], coords[1])
+    request.store_status(params[:status])
+    redirect_to :back
+  end
 end
