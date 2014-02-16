@@ -1,8 +1,11 @@
 /! Main Page Content and Sidebar
+.row#heading
+  .large-10.columns
+    =image_tag('logo.png', class: 'logo-image left')
+    a.button.secondary.right href="http://mystate.herokuapp.com/users/sign_in" Live stats sign-in
 .row#main-content
   /! Contact Details
   .large-10.columns
-    =image_tag('logo.png', class: 'logo-image')
     h3.tagline
       | Update how you've been affected by the flooding
     p.introduction
@@ -21,10 +24,9 @@
               .large-2.columns
                 label.inline.form-label Your Phone Number
               .large-10.columns
-                input#yourPhone placeholder="+44 7xxx xxx xxx" type="text"
-                = text_field_tag :telephone, id: "yourPhone", placeholder: "+44 7xxx xxx xxx"
-                = hidden_field_tag :latitude, class: "latitude"
-                = hidden_field_tag :longitude, class: "longitude"
+                = text_field_tag :telephone, nil, id: "yourPhone", placeholder: "+44 7xxx xxx xxx"
+                = hidden_field_tag :latitude, nil, class: "latitude"
+                = hidden_field_tag :longitude, nil, class: "longitude"
 
             .row.collapse#postcode-row
               .large-2.columns
