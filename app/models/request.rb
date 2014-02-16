@@ -51,7 +51,6 @@ class Request < ActiveRecord::Base
     res = HTTParty.get(api_url)
 
     # Grab the lat and long
-    #puts res["results"][0]["geometry"]["location"]["lat"]
     lat = res["results"][0]["geometry"]["location"]["lat"]
     lon = res["results"][0]["geometry"]["location"]["lng"]
 
