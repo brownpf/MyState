@@ -20,13 +20,13 @@ require 'twilio-ruby'
 
   def create_request
     request = Request.create
-    if params[:post_code]
+    if params[:post_code].present?
       coords = request.reverse_geolocation(params[:post_code])
     else
       coords = [params[:latitude], params[:longitude]]
     end
 
-    request.store_location(coords[0], coords[1])
+    request.store_coords(coords[0], coords[1])
     request.store_status(params[:status])
     redirect_to :back
   end

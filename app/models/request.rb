@@ -58,8 +58,8 @@ class Request < ActiveRecord::Base
   end
 
   def store_coords(x_coords, y_coords)
-    self.x_coords = x_coords
-    self.y_coords = y_coords
+    self.latitude = x_coords
+    self.longitude = y_coords
     self.save
   end
 
