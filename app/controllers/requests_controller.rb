@@ -25,9 +25,9 @@ require 'twilio-ruby'
     else
       coords = [params[:latitude], params[:longitude]]
     end
-
+    request.update(telephone: params[:telephone])
     request.store_coords(coords[0], coords[1])
-    request.store_status(params[:status])
+    request.store_status(params[:email][:status])
     redirect_to :back
   end
 end
