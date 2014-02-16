@@ -38,7 +38,7 @@
               .large-2.columns
                 label.inline.form-label Your Status
               .large-10.columns
-                = select(:email, :status, options_for_select([["OH MY GOD GET ME OUT OF HERE!", "1"], ["Worried", "2"], ["Ok", "3"]]))
+                = select(:email, :status, options_for_select([["Urgent help required", "1"], ["Worried", "2"], ["Available to volunteer", "3"]]))
             .row.collapse
               .large-12.columns
                 button.radius.button type="submit"
