@@ -9,7 +9,7 @@
 @media screen and (min-device-width : 568px) {
 
   .logo-image {
-    width: 20%;
+    width: 200px;
   }
 
   .tagline {
@@ -19,6 +19,24 @@
   .introduction {
     margin-top: 1em;
     font-size: 1.2em;
+  }
+
+  input[type=text] {
+    padding: 1em;
+    font-size: 2em;
+  }
+
+  .button {
+    font-family: "Avenir", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+    font-weight: 800;
+    width: 100%;
+    font-size: 1.5em;
+    margin-top: 0.5em;
+  }
+
+  select {
+    font-size: 1.1em;
+    padding: 0.8em;
   }
 
   body {
@@ -31,8 +49,12 @@
     // background-color: #2980b9;
   }
 
+  .form-label {
+    font-size: 1.5em;
+  }
+
   footer {
-    margin-left: 1em;
+    padding-left: 1em;
   }
 }
 

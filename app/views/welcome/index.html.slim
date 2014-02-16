@@ -17,23 +17,25 @@
           a href="#panel1"
         .content data-slug="panel1"
           = form_tag('create_request')
-            .row.collapse
+            .row.collapse#phone-row
               .large-2.columns
-                label.inline Your Phone Number
+                label.inline.form-label Your Phone Number
               .large-10.columns
                 input#yourPhone placeholder="+44 7xxx xxx xxx" type="text"
             .row.collapse#postcode-row
               .large-2.columns
-                label.inline Your Postcode
+                label.inline.form-label Your Postcode
               .large-10.columns
                 input#yourPostcode placeholder="FL0 0DD" type="text"
             .row.collapse
               .large-2.columns
-                label.inline Your Status
+                label.inline.form-label Your Status
               .large-10.columns
                 = select(:email, :status, options_for_select([["OH MY GOD GET ME OUT OF HERE!", "1"], ["Worried", "2"], ["Ok", "3"]]))
-            button.radius.button type="submit"
-              | Submit
+            .row.collapse
+              .large-12.columns
+                button.radius.button type="submit"
+                  | Update my status
 
             input.latitude type='hidden'
             input.longitude type='hidden'
