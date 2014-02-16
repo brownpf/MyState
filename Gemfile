@@ -14,6 +14,8 @@ gem 'compass-rails'
 gem 'modular-scale', "1.0.6"
 gem "slim-rails"
 
+gem 'twilio-ruby'
+
 #image manipulation
 #gem "mini_magick"
 #gem 'carrierwave'
