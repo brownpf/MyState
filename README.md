@@ -1,4 +1,4 @@
-#StatusMe
+#MyState
 
 ###A realtime update service for victims and volunteers of flooding in the UK.
 
