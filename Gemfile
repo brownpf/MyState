@@ -26,7 +26,10 @@ gem 'foundation-rails'
 #Amazon S3
 #gem "fog", "~> 1.3.1"
 
-gem 'sqlite3'
+gem 'sqlite3', group: :development
+
+
+gem 'pg', group: :production
 
 #Database Postgres
 #gem "pg", group: :production
