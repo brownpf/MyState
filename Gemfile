@@ -15,6 +15,7 @@ gem 'modular-scale', "1.0.6"
 gem "slim-rails"
 
 gem 'twilio-ruby'
+gem 'geocoder'
 
 gem 'foundation-rails'
 
