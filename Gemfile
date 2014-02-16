@@ -21,6 +21,8 @@ gem "slim-rails"
 #Amazon S3
 #gem "fog", "~> 1.3.1"
 
+gem 'sqlite3'
+
 #Database Postgres
 gem "pg"
 
