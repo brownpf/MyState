@@ -2,10 +2,42 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-body {
-  background-color: #3498db;
+ body {
+   font-family: "Avenir", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+ }
+
+@media screen and (min-device-width : 568px) {
+
+  .logo-image {
+    width: 20%;
+  }
+
+  .tagline {
+    margin-top: 1em;
+  }
+
+  .introduction {
+    margin-top: 1em;
+    font-size: 1.2em;
+  }
+
+  body {
+    // background-color: #3498db;
+  }
+
+  #main-content {
+    margin-top: 1em;
+    padding-left: 1em;
+    // background-color: #2980b9;
+  }
+
+  footer {
+    margin-left: 1em;
+  }
 }
 
-#main-content {
-  background-color: #2980b9;
+@media screen and (max-device-width : 568px) {
+  .logo-image {
+    width: 80%;
+  }
 }
