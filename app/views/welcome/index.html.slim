@@ -66,7 +66,7 @@
 /             a href="#"
 / /! End Top Bar
 /! Main Page Content and Sidebar
-.row
+.row#main-content
   /! Contact Details
   .large-9.columns
     h3=Rails.configuration.site_name
@@ -79,7 +79,7 @@
         h5.title
           a href="#panel1"
         .content data-slug="panel1"
-          form
+          = form_tag('create_request')
             .row.collapse
               .large-2.columns
                 label.inline Your Phone Number
@@ -95,7 +95,7 @@
                 label.inline Your Status
               .large-10.columns
                 = select(:email, :status, options_for_select([["OH MY GOD GET ME OUT OF HERE!", "1"], ["Worried", "2"], ["Ok", "3"]]))
-            button.radius.button type="submit" name="hi"
+            button.radius.button type="submit"
               | Submit
 
             input.latitude type='hidden'

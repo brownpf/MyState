@@ -11,7 +11,7 @@ StausMe::Application.routes.draw do
   root 'welcome#index'
 
   # Example of regular route:
-  #   get 'products/:id' => 'catalog#view'
+  post 'create_request', to: 'requests#create_request', as: :create_request
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
