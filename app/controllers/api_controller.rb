@@ -1,4 +1,6 @@
 class ApiController < ApplicationController
+  skip_before_filter :verify_authenticity_token
+
   def get_requests
     # ugly controller :(
     if params[:distance].present?

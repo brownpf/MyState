@@ -1,5 +1,6 @@
 class RequestsController < ApplicationController
-require 'twilio-ruby'
+
+  require 'twilio-ruby'
 
 
   def get_requests
