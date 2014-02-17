@@ -27,7 +27,7 @@ class RequestsController < ApplicationController
       coords = [params[:latitude], params[:longitude]]
     end
     request.update(telephone: params[:telephone])
-    request.store_coords(coords[0], coords[1])
+    request.store_coords(coords[:lat],coords[:lon])
     request.store_status(params[:email][:status])
     redirect_to :back
   end
