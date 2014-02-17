@@ -28,9 +28,6 @@ gem 'foundation-rails'
 
 gem 'sqlite3', group: :development
 
-
-gem 'pg', group: :production
-
 #Database Postgres
 #gem "pg", group: :production
 
