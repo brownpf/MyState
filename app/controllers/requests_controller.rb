@@ -1,5 +1,5 @@
 class RequestsController < ApplicationController
-
+  skip_before_filter :verify_authenticity_token
   require 'twilio-ruby'
 
 
@@ -13,7 +13,11 @@ class RequestsController < ApplicationController
     # Grab the phone number for the message
     # And the message text
     from = params[:From]
-    text = Request.store_sms(params[:Body], from)
+    body = params[:Body]
+
+    # Create a request
+    r = Request.new
+    text = r.store_sms(body, from)
 
     # Return the message back out
     render xml: text
