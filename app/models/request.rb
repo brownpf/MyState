@@ -11,17 +11,39 @@ class Request < ActiveRecord::Base
       message = ''
 
       # Work out if it is a postcode
+      # If its length is 1, it's a status update
       if body.length == 1
+        # If they are sending a status update, we should have their mobile number - get it
         req = self.class.find_by(telephone: from)
 
-        # Update that record
-        store_status(body.to_i)
+        # We should have an object, if not then we don't hold a record for this person...
+        unless req.nil?
+          # Check it's a valid number
+          upd = Integer(body) rescue nil
 
-        #Set the message
-        message = 'We have updated your status successfully'
+          # Update the record record
+          if upd.nil?
+            # Set the message
+            message = 'We have not been able to set your status, we were unable to read your status - please try again?'
+          else
+            #req.store_status(body.to_i)  # commented out as the type is TEXT
+
+            # Write to the database
+            req.store_status(body)
+
+            # And set the return message
+            message = 'We have updated your status successfully'
+          end
+        else
+          # Set the message
+          message = 'We have not been able to set your status as we do not hold your postcode'
+        end
       elsif self.class.valid_postcode?(body)
         # Store the postcode
         self.postcode = body
+
+        # Store the incomming number
+        self.telephone = from
 
         # Call the Geo-location
         cord = self.reverse_geolocation(body)
@@ -29,18 +51,14 @@ class Request < ActiveRecord::Base
         # Store the Geo
         self.store_coords(cord[:lat],cord[:lon])
 
-        # Store the incomming number
-        self.telephone = from
-
         #  build the return message
         message = 'We have located you, please send us a status update'
       else
         message ='We are not able to read your message - please check and try again?'
       end
 
-      twiml = Twilio::TwiML::Response.new do |r|
-        r.Message message
-      end
+      # Set up the return message from Twilio
+      twiml = Twilio::TwiML::Response.new {|r| r.Message message}
 
       #return the for rendering
       twiml.text

@@ -8,8 +8,9 @@ class RequestsController < ApplicationController
     render json: requests, status: 200, example_params: false
   end
 
-  # This method captures the incoming sms message
+  # This method that captures the incoming SMS message
   def request_incoming
+    # Grab the phone number for the message
     # And the message text
     from = params[:From]
     text = Request.store_sms(params[:Body], from)
